@@ -26,3 +26,6 @@ _testmain.go
 # Intellij
 *.iml
 .idea/workspace.xml
+
+#Vendor
+vendor

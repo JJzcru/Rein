@@ -1,0 +1,6 @@
+package: Rein
+import:
+- package: github.com/gorilla/mux
+  version: ^1.1.0
+- package: github.com/Sirupsen/logrus
+  version: ^0.10.0
