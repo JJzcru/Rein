@@ -1,23 +1,31 @@
 package main
 
 import (
-	"Rein/config"
+	"Rein/presentation/log"
+	"Rein/presentation/router"
 	"fmt"
 	"net/http"
-	"strconv"
+	"os"
 )
 
+// App Object that represents the app
 type App struct {
-	log  config.Log
-	port int
+	log    *log.Log
+	port   string
+	router *router.Router
 }
 
 func main() {
-	app := App{log: config.Log{}, port: 8080}
-	router := config.Router{}.NewRouter()
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	app := App{log: log.NewLog(), port: port, router: router.NewRouter()}
 
 	app.log.Execute()
 
-	fmt.Printf("The server is running in port: " + strconv.Itoa(app.port) + "\n")
-	app.log.Fatal(http.ListenAndServe(":"+strconv.Itoa(app.port), router))
+	fmt.Printf("The server is running in port: " + app.port + "\n")
+	app.log.Fatal(http.ListenAndServe(":"+app.port, app.router.GetRouter()))
 }

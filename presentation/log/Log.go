@@ -1,17 +1,22 @@
-package config
+package log
 
 import (
-	log "github.com/Sirupsen/logrus"
 	"os"
+
+	log "github.com/Sirupsen/logrus"
 )
 
 type Log struct{}
 
-func (l Log) Execute() {
+func NewLog() *Log {
+	return &Log{}
+}
+
+func (l *Log) Execute() {
 	l.init()
 }
 
-func (l Log) init() {
+func (l *Log) init() {
 	switch os.Getenv("ENV") {
 	case "production":
 		log.SetFormatter(&log.JSONFormatter{})
@@ -25,6 +30,6 @@ func (l Log) init() {
 	}
 }
 
-func (l Log) Fatal(args ...interface{}) {
+func (l *Log) Fatal(args ...interface{}) {
 	log.Fatal(args)
 }
