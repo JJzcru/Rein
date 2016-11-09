@@ -1,0 +1,10 @@
+bin/*
+gin-bin
+glide.lock
+glide.yaml
+LICENSE
+README
+Rein.im
+.git/*
+.vscode/*
+.idea/
