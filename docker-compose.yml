@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    app:
+        build: .
+        container_name: Rein
+        image: rein
+        ports:
+         - "8080:3000"
+        volumes:
+         - .:/go/src/Rein
