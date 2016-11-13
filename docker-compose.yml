@@ -4,8 +4,9 @@ services:
     app:
         build: .
         container_name: Rein
-        image: rein
+        image: rein:dev
+        restart: always
         ports:
-         - "8080:3000"
+         - "3000:3000"
         volumes:
          - .:/go/src/Rein
