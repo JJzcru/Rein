@@ -8,17 +8,17 @@ import (
 
 // UserModel Representation of User in the presentation layer
 type UserModel struct {
-	UserID       string    `json:"UserID,omitempty"`
-	DepartmentID string    `json:"DepartmentID,omitempty"`
-	Username     string    `json:"username,omitempty"`
-	Password     string    `json:"password,omitempty"`
-	Name         string    `json:"name,omitempty"`
-	LastName     string    `json:"lastName,omitempty"`
-	Email        string    `json:"email,omitempty"`
-	Role         []string  `json:"role,omitempty"`
-	Active       bool      `json:"active,omitempty"`
-	CreatedAt    time.Time `json:"createdAt,omitempty"`
-	UpdatedAt    time.Time `json:"updatedAt,omitempty"`
+	UserID       string    `json:"UserID"`
+	DepartmentID string    `json:"DepartmentID"`
+	Username     string    `json:"username"`
+	Password     string    `json:"password"`
+	Name         string    `json:"name"`
+	LastName     string    `json:"lastName"`
+	Email        string    `json:"email"`
+	Role         []string  `json:"role"`
+	Active       bool      `json:"active"`
+	CreatedAt    time.Time `json:"createdAt"`
+	UpdatedAt    time.Time `json:"updatedAt"`
 }
 
 // NewUserModel Constructor for a new UserModel

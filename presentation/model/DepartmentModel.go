@@ -2,8 +2,8 @@ package model
 
 // DepartmentModel Representation of Department in the presentation layer
 type DepartmentModel struct {
-	DepartmentID string `json:"DepartmentID,omitempty"`
-	Name         string `json:"name,omitempty"`
+	DepartmentID string `json:"DepartmentID"`
+	Name         string `json:"name"`
 }
 
 // NewDepartmentModel Constructor for a new DepartmentModel
