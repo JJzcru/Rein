@@ -10,3 +10,7 @@ import:
   - spew
 - package: gopkg.in/mgo.v2
 - package: github.com/nu7hatch/gouuid
+- package: github.com/rs/cors
+  version: ^1.0.0
+- package: github.com/SermoDigital/jose
+  version: ^1.0.0

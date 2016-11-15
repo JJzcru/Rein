@@ -1,5 +1,5 @@
-hash: 507b1a6d0bbc3631ea0b81c222e64a3c97219e4392cdcd0111cab7a4930188ac
-updated: 2016-11-14T17:29:28.9626466-05:00
+hash: e3467e0dda4a48fe4662d20492b19a02dd3084b6ebd5fb36f24934fa4004c24d
+updated: 2016-11-14T20:59:02.0502404-05:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 6cf5744a041a0022271cefed95ba843f6d87fd51
@@ -9,8 +9,18 @@ imports:
   version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
 - name: github.com/nu7hatch/gouuid
   version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
+- name: github.com/rs/cors
+  version: a62a804a8a009876ca59105f7899938a1349f4b3
+- name: github.com/rs/xhandler
+  version: ed27b6fd65218132ee50cd95f38474a3d8a2cd12
+- name: github.com/SermoDigital/jose
+  version: 389fea327ef076853db8fae03a0f38e30e6092ab
 - name: github.com/Sirupsen/logrus
   version: d26492970760ca5d33129d2d799e34be5c4782eb
+- name: golang.org/x/net
+  version: 00ed5e97ea3a5ac46658b98e50259941947cec04
+  subpackages:
+  - context
 - name: golang.org/x/sys
   version: 9bb9f0998d48b31547d975974935ae9b48c7a03c
   subpackages:

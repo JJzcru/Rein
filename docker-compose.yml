@@ -17,5 +17,6 @@ services:
     db:
         image: mongo:3.0
         container_name: ReinDB
+        restart: always
         ports:
         - "27017:27017"

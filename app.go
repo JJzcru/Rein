@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+
+	"github.com/rs/cors"
 )
 
 // App Object that represents the app
@@ -27,5 +29,5 @@ func main() {
 	app.log.Execute()
 
 	fmt.Printf("The server is running in port: " + app.port + "\n")
-	app.log.Fatal(http.ListenAndServe(":"+app.port, app.router.GetRouter()))
+	app.log.Fatal(http.ListenAndServe(":"+app.port, cors.Default().Handler(app.router.GetRouter())))
 }
