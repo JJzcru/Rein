@@ -1,5 +1,5 @@
-hash: 6b59e254d82eb68a450b2e80f8f83435c81162e133d9abd0bf10be541a57e417
-updated: 2016-11-08T17:26:25.6596436-05:00
+hash: 507b1a6d0bbc3631ea0b81c222e64a3c97219e4392cdcd0111cab7a4930188ac
+updated: 2016-11-14T17:29:28.9626466-05:00
 imports:
 - name: github.com/davecgh/go-spew
   version: 6cf5744a041a0022271cefed95ba843f6d87fd51
@@ -7,10 +7,19 @@ imports:
   - spew
 - name: github.com/julienschmidt/httprouter
   version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
+- name: github.com/nu7hatch/gouuid
+  version: 179d4d0c4d8d407a32af483c2354df1d2c91e6c3
 - name: github.com/Sirupsen/logrus
   version: d26492970760ca5d33129d2d799e34be5c4782eb
 - name: golang.org/x/sys
   version: 9bb9f0998d48b31547d975974935ae9b48c7a03c
   subpackages:
   - unix
+- name: gopkg.in/mgo.v2
+  version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
+  subpackages:
+  - bson
+  - internal/json
+  - internal/sasl
+  - internal/scram
 testImports: []

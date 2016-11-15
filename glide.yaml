@@ -8,3 +8,5 @@ import:
   version: ^1.0.0
   subpackages:
   - spew
+- package: gopkg.in/mgo.v2
+- package: github.com/nu7hatch/gouuid

@@ -15,6 +15,8 @@ func NewRouter() *Router {
 func (r *Router) GetRouter() *httprouter.Router {
 	router := httprouter.New()
 	router.GET("/", handlers.IndexHandler)
+	router.GET("/department", handlers.NewDepartmentHandler().GetDepartments)
+	router.POST("/department", handlers.NewDepartmentHandler().CreateDepartment)
 	/*router.HandleFunc("/", handlers.Index)
 	router.HandleFunc("/todos", handlers.TodoIndex)
 	router.HandleFunc("/todos/{todoId}", handlers.TodoShow)*/

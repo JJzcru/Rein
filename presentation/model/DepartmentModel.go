@@ -7,8 +7,8 @@ type DepartmentModel struct {
 }
 
 // NewDepartmentModel Constructor for a new DepartmentModel
-func NewDepartmentModel() *DepartmentModel {
-	return &DepartmentModel{}
+func NewDepartmentModel() DepartmentModel {
+	return DepartmentModel{}
 }
 
 // SetDepartmentID Set the id of the department

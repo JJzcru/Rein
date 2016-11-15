@@ -12,3 +12,10 @@ services:
          - "3000:3000"
         volumes:
          - .:/go/src/Rein
+        links:
+         - db
+    db:
+        image: mongo:3.0
+        container_name: ReinDB
+        ports:
+        - "27017:27017"
