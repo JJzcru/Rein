@@ -1,7 +1,7 @@
 # Image build from scratch to deploy a micro size container go aplication
 # Binary Compile Command:
-# CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/rein app.go
+# CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/app app.go
 FROM scratch
-ADD ./bin/app /
-ENV PORT 3000
+ADD ./bin/app /app
+ENV PORT 80
 CMD ["/app"]

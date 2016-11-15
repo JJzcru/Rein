@@ -6,6 +6,7 @@ services:
             context: .
             dockerfile: Dockerfile.prod
         environment:
+            PORT: 80
             PRODUCTION: 'true'
         ports:
-         - "80:8080"
+         - "80:80"

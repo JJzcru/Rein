@@ -6,6 +6,8 @@ services:
         container_name: Rein
         image: rein:dev
         restart: always
+        environment:
+            PORT: 80
         ports:
          - "3000:3000"
         volumes:

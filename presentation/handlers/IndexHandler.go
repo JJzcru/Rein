@@ -13,7 +13,7 @@ import (
 // IndexHandler Control the health check of the application
 func IndexHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	userModel := model.NewUserModel()
-	userModel.SetName("Tracer 123")
+	userModel.SetName("Widowmaker")
 	userModel.SetActive(false)
 
 	userModel.SetRole([]string{"admin"})
