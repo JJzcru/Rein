@@ -19,11 +19,5 @@ func NewGetAllDepartments() *GetAllDepartments {
 
 // Execute The use case
 func (u *GetAllDepartments) Execute(ch chan []domain.Department) {
-	/*c := u.departmentRepository.AddDepartment(u.department)
-	department := <-c
-	fmt.Println(department.ToString())
-
-	ch <- department*/
-
 	ch <- <-u.departmentRepository.GetDepartments()
 }

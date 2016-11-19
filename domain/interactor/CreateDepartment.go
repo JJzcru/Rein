@@ -4,6 +4,8 @@ import (
 	data "Rein/data/repository"
 	"Rein/domain"
 	"Rein/domain/repository"
+
+	log "github.com/Sirupsen/logrus"
 )
 
 // CreateDepartment Use case for create a new Department
@@ -20,11 +22,16 @@ func NewCreateDepartment(department domain.Department) *CreateDepartment {
 
 // Execute The use case
 func (u *CreateDepartment) Execute(ch chan domain.Department) {
-	/*c := u.departmentRepository.AddDepartment(u.department)
-	department := <-c
-	fmt.Println(department.ToString())
+	department, err := u.departmentRepository.GetDepartmentByName(u.department.GetName())
+	if err != nil {
+		department, err = u.departmentRepository.AddDepartment(u.department)
+		if err != nil {
+			log.Error(err)
+			department.SetError(domain.NewError(500, "Error creating the department"))
+		}
+	} else {
+		department.SetError(domain.NewError(409, "Already exist a Department with that name"))
+	}
 
-	ch <- department*/
-
-	ch <- <-u.departmentRepository.AddDepartment(u.department)
+	ch <- department
 }

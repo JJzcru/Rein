@@ -1,9 +1,14 @@
 package model
 
+import (
+	"Rein/domain"
+)
+
 // DepartmentModel Representation of Department in the presentation layer
 type DepartmentModel struct {
 	DepartmentID string `json:"DepartmentID"`
 	Name         string `json:"name"`
+	err          domain.Error
 }
 
 // NewDepartmentModel Constructor for a new DepartmentModel
@@ -29,6 +34,16 @@ func (d *DepartmentModel) SetName(name string) {
 // GetName Get department name
 func (d *DepartmentModel) GetName() string {
 	return d.Name
+}
+
+// SetError Set department error
+func (d *DepartmentModel) SetError(Error domain.Error) {
+	d.err = Error
+}
+
+// GetError Get department error
+func (d *DepartmentModel) GetError() domain.Error {
+	return d.err
 }
 
 // ToString Transform a UserModel to string

@@ -2,16 +2,15 @@ package model
 
 // ErrorModel Representation of an Error in presentation layer
 type ErrorModel struct {
-	code    int
-	message string
+	Msg string `json:"error"`
 }
 
 // NewErrorModel Constructor for create a new ErrorModel
-func NewErrorModel(code int, msg string) ErrorModel {
-	return ErrorModel{code, msg}
+func NewErrorModel(msg string) ErrorModel {
+	return ErrorModel{msg}
 }
 
 // GetMessage Get the error message
 func (e *ErrorModel) GetMessage() string {
-	return e.message
+	return e.Msg
 }

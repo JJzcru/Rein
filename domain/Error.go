@@ -15,3 +15,8 @@ func NewError(code int, msg string) Error {
 func (e *Error) GetMessage() string {
 	return e.message
 }
+
+// GetCode return the code number for the error
+func (e *Error) GetCode() int {
+	return e.code
+}

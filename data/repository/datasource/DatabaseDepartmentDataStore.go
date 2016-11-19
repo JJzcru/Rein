@@ -21,7 +21,12 @@ func (d *DatabaseDepartmentDataStore) DepartmentCreate(department domain.Departm
 	return d.departmentCache.Create(department)
 }
 
-// DepartmentCreate Create a new Department
+// DepartmentGetAll return a list of all the departments
 func (d *DatabaseDepartmentDataStore) DepartmentGetAll() ([]domain.Department, error) {
 	return d.departmentCache.GetAll()
+}
+
+// DepartmentGetByName return the department by its name if exist
+func (d *DatabaseDepartmentDataStore) DepartmentGetByName(name string) (domain.Department, error) {
+	return d.departmentCache.GetByName(name)
 }

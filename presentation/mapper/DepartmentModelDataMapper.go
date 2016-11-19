@@ -19,6 +19,7 @@ func (d *DepartmentModelDataMapper) Transform(departmentModel model.DepartmentMo
 	department := domain.NewDepartment()
 	department.SetDepartmentID(departmentModel.GetDepartmentID())
 	department.SetName(departmentModel.GetName())
+	department.SetError(departmentModel.GetError())
 	return department
 }
 
@@ -36,6 +37,7 @@ func (d *DepartmentModelDataMapper) Convert(department domain.Department) model.
 	departmentModel := model.NewDepartmentModel()
 	departmentModel.SetDepartmentID(department.GetDepartmentID())
 	departmentModel.SetName(department.GetName())
+	departmentModel.SetError(department.GetError())
 	return departmentModel
 }
 

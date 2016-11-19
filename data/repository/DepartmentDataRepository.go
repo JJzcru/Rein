@@ -18,16 +18,8 @@ func NewDepartmentDataRepository() *DepartmentDataRepository {
 }
 
 // AddDepartment Add a department to the repository
-func (d *DepartmentDataRepository) AddDepartment(dep domain.Department) <-chan domain.Department {
-	c := make(chan domain.Department, 1)
-	//c <- department
-	department, err := d.departmentDataStoreFactory.Create().DepartmentCreate(dep)
-
-	if err != nil {
-		department.SetError(domain.NewError(500, "Error creating the Department"))
-	}
-	c <- department
-	return c
+func (d *DepartmentDataRepository) AddDepartment(dep domain.Department) (domain.Department, error) {
+	return d.departmentDataStoreFactory.Create().DepartmentCreate(dep)
 }
 
 // GetDepartments Get a list of all the departments
@@ -42,4 +34,9 @@ func (d *DepartmentDataRepository) GetDepartments() <-chan []domain.Department {
 	}
 	c <- departments
 	return c
+}
+
+// GetDepartmentByName return a list of all the departments by name
+func (d *DepartmentDataRepository) GetDepartmentByName(name string) (domain.Department, error) {
+	return d.departmentDataStoreFactory.Create().DepartmentGetByName(name)
 }
